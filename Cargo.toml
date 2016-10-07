@@ -1,0 +1,6 @@
+[package]
+name = "test-for-pi"
+version = "0.1.0"
+authors = ["Erwin Gribnau <erwin@gribnau.org>"]
+
+[dependencies]
