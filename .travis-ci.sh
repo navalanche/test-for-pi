@@ -2,7 +2,7 @@
 
 if [ "${ARCH}" == "arm" ]; then
   echo "We are running an ARM build"
-  false
+  docker run -it --rm -v ${PWD}:/source nineties/rust-arm cargo build
 fi
 
 if [ "${ARCH}" == "x64" ]; then
