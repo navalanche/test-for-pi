@@ -1,8 +1,5 @@
 #!/bin/bash
 
-function setup_rpi_docker {
-}
-
 if ["${ARCH}" = "arm" ]; then
   echo "We are running an ARM build"
 else 
