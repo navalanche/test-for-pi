@@ -1,2 +1,2 @@
 # test-for-pi
-Test repository
+Test repository for testing Rust Travis builds.
