@@ -8,5 +8,7 @@ fi
 if [ "${ARCH}" == "x64" ]; then
   echo "We are running normal build"
   cargo build
+  pwd
+  find .
 fi
 
