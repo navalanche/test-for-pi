@@ -10,8 +10,9 @@ env:
 script:
 - bash -ex .travis-ci.sh
 deploy:
-  skip_cleanup: true
   provider: releases
+  skip_cleanup: true
+  overwrite: true
   api_key:
     secure: pRm1Cg0q4eMPqakdmnK9FGmlzCTSrVmlZd5HjbTfNVVvrKyJ7XRAwgOC5i1pEPT/cUWrnoTDKy18Fv1d/h77ZvQPT+ivV7Zqz+zsWanfIMGTf/NEpprpBfmS2MRmcR/XWQLRQwlZ3Wck/E4rxLMM+9IRhYhZVKAtAlGRx8bQy6RL4gMNm574wM/qQMrvTSVDI0am5yrb6yb2ZHsdBYKD9KOTBbZwNVsvUSMVpK0+J5fKCcSxIKJCaRwj9gyget148fC5wqGMCOlG0pGQD2AGMt2x3FLBC4tStVymiY7m4uVSA1qwDYkwl28coJNgHUQFLb3k5hnS9V2gVdZdzDZTZCAQ3mcfGhzmwOh6PAzAvi9LkPEWA/CQAiB7xjOSqokyzrZ9qTd75J+2tVtkCZeuLjCK99QK3y6TveTfHgSs3DWcw9UywqGj94Utl6v4+fZ418Aw3EHwB2kHiiUMV1caMHiF6fhZ7TQF94E/V4pMq+wlBH+n5fYW7FNH5Uylq+k7uV1y+yyZAJPPlPse9GbKwxm+rA38GiJr88oq/eddcMFca67V1EWJDLJzPuwnmGwGAgnCpEq3uNLWMPLM1xpBo2Bwh65TxylbrBkAKtWnTI8Do2TiutQcg0mOhrNcJua8d7aETA05ttn7tkW0C5CM7x1ZKCyh7YVMJIpfQFIFBD4=
   file: /home/travis/build/navalanche/test-for-pi/target/release/test-for-pi
