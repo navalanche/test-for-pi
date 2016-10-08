@@ -9,6 +9,7 @@ env:
 - ARCH=arm
 script:
 - bash -ex .travis-ci.sh
+
 deploy:
   provider: releases
   skip_cleanup: true
@@ -18,9 +19,7 @@ deploy:
   file: /home/travis/build/navalanche/test-for-pi/target/release/test-for-pi-x64
   on:
     repo: navalanche/test-for-pi
-    condition: "$ARCH = x64"
-
-
+    condition: "$ARCH == x64"
 deploy:
   provider: releases
   skip_cleanup: true
@@ -30,5 +29,5 @@ deploy:
   file: /home/travis/build/navalanche/test-for-pi/target/arm-unknown-linux-gnueabihf/debug/test-for-pi-arm
   on:
     repo: navalanche/test-for-pi
-    condition: "$ARCH = arm"
+    condition: "$ARCH == arm"
 
