@@ -22,6 +22,7 @@ deploy:
   on:
     repo: navalanche/test-for-pi
     condition: "$ARCH == x64"
+
 deploy:
   provider: releases
   skip_cleanup: true
