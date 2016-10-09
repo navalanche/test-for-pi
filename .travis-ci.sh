@@ -8,9 +8,9 @@ if [ "${ARCH}" == "arm" ]; then
   sudo chmod a+rwx target/arm-unknown-linux-gnueabihf/debug/test-for-pi-arm
 fi
 
-if [ "${ARCH}" == "x64" ]; then
+if [ "${ARCH}" == "intel" ]; then
   echo "We are running normal build"
   cargo build --release
-  mv target/release/test-for-pi target/release/test-for-pi-x64
+  mv target/release/test-for-pi target/release/test-for-pi-intel
 fi
 
