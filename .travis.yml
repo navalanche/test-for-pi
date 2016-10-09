@@ -10,6 +10,8 @@ env:
 script:
 - bash -ex .travis-ci.sh
 
+before_deploy: "env"
+
 deploy:
   provider: releases
   skip_cleanup: true
