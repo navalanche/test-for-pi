@@ -1,18 +1,13 @@
 #!/bin/bash
 
-if [ "${ARCH}" == "arm" ]; then
-  echo "We are running an ARM build"
-  mkdir deploy
-  docker run -it --rm -v ${PWD}:/source nineties/rust-arm cargo build --release
-  whoami
-  sudo mv target/arm-unknown-linux-gnueabihf/debug/test-for-pi deploy/test-for-pi-arm
-  sudo chown travis.travis deploy/test-for-pi-arm
-fi
+mkdir deploy
+echo "Intel build:"
+cargo build --release
+mv target/release/test-for-pi deploy/test-for-pi-intel
 
-if [ "${ARCH}" == "intel" ]; then
-  echo "We are running normal build"
-  mkdir deploy
-  cargo build --release
-  mv target/release/test-for-pi deploy/test-for-pi-intel
-fi
+echo "ARMv7 build:"
+docker run -it --rm -v ${PWD}:/work rustcross/armv7-unknown-linux-gnueabihf:latest cargo build --release
+whoami
+sudo mv target/arm-unknown-linux-gnueabihf/debug/test-for-pi deploy/test-for-pi-arm
+sudo chown travis.travis deploy/test-for-pi-arm
 
