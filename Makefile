@@ -1,4 +1,4 @@
-all: intel armv7
+all: intel
 
 intel: deploydir
 	cargo build --release
@@ -14,6 +14,7 @@ deploydir:
 	sudo modprobe vcan
 	sudo ip link add dev vcan0 type vcan
 	sudo ip link set up vcan0
+	ifconfig
 	mkdir -p deploy
 
 clean:
