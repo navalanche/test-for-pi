@@ -11,6 +11,9 @@ armv7: deploydir
 	sudo chown `id -u`:`id -g` deploy/test-for-pi-armv7
 
 deploydir:
+	sudo modprobe vcan
+	sudo ip link add dev vcan0 type vcan
+	sudo ip link set up vcan0
 	mkdir -p deploy
 
 clean:
